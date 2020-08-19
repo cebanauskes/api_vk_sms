@@ -17,7 +17,7 @@ def get_status(user_id):
         'v': 5.92
     }
     response = (requests.post('https://api.vk.com/method/users.get', params=params).json().get('response'))[0]
-    return response['online']  # Верните статус пользователя в ВК
+    return response['online'] 
 
 
 def sms_sender(sms_text):
@@ -29,10 +29,9 @@ def sms_sender(sms_text):
                               from_='+12075077803',
                               to='+79259314922',
                           )
-    return message.sid  # Верните sid отправленного сообщения из Twilio
+    return message.sid 
 
-# vk_id = input("Введите id ")
-# get_status(vk_id)
+
 if __name__ == "__main__":
     vk_id = input("Введите id ")
     while True:
