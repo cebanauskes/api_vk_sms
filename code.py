@@ -26,8 +26,8 @@ def sms_sender(sms_text):
     client = Client(account_sid, account_token)
     message = client.messages.create(
                               body=sms_text,
-                              from_='+12075077803',
-                              to='+79259314922',
+                              from_=os.getenv('phone_from'),
+                              to=os.getenv('phone_to'),
                           )
     return message.sid 
 
